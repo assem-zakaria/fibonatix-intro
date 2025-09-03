@@ -95,8 +95,8 @@
                 </style>
 
                 <g id="logo_grp">
-                    <path id="line_path" class="fibo-st0" d="M960 740 L960 356.8"/>
-                    <path id="circle_path" class="fibo-st0" d="M944.2,357.6c5.2-0.5,10.5-0.8,15.8-0.8c82.1,0,148.6,66.5,148.6,148.6S1042.1,654,960,654
+                    <path id="line_path" style="opacity: 0; visibility: hidden;" class="fibo-st0" d="M960 740 L960 356.8"/>
+                    <path id="circle_path" style="opacity: 0; visibility: hidden;" class="fibo-st0" d="M944.2,357.6c5.2-0.5,10.5-0.8,15.8-0.8c82.1,0,148.6,66.5,148.6,148.6S1042.1,654,960,654
                         s-148.6-66.5-148.6-148.6c0-69.9,48.3-128.5,113.3-144.4"/>
                     <rect id="white_box" x="914.3" y="340" class="fibo-st1" width="31.6" height="42.2"/>
                 </g>
@@ -232,11 +232,13 @@
                     });
 
                     gsap.set(intro_ani_el.querySelector("#logo_grp #line_path"), {
-                        drawSVG: "0% 0%"
+                        drawSVG: "0% 0%",
+                        autoAlpha: 1
                     });
 
                     gsap.set(intro_ani_el.querySelector("#logo_grp #circle_path"), {
-                        drawSVG: "0% 0%"
+                        drawSVG: "0% 0%",
+                        autoAlpha: 1
                     });
 
                     gsap.set(intro_ani_el.querySelectorAll("#text_grp .text-letter"), {
@@ -252,16 +254,11 @@
                     });
 
 
-                    
-
-                    
-
-
-
 
                 //  Scroll Trigger Timeline
                     const fibo_intro_tl = gsap.timeline({
                       delay: 0.5,
+                      // paused: true
                     });
 
                     fibo_intro_tl.to(intro_ani_el.querySelector("#logo_grp #line_path"), {
